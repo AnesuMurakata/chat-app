@@ -17,6 +17,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
     await fcm.requestPermission();
 
+    fcm.subscribeToTopic('chat');
+
     final token = await fcm.getToken();
     print(
         token); // you could send this token (via HTTP or the Firestore SDK to a backend)
